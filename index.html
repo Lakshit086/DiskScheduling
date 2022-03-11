@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Scheduling Algorithm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-heading">Disk Scheduling Algorithms OS Project</h1>
+    </header>
+    <section>
+        <div class="about">
+            <h1 class="about-heading">Introduction to disc Scheduling</h1>
+            <p class="about-p">A magnetic disc is an easiest way to implement the secondary memory.
+                Each disk platter has a flat circular shape like a CD or DVD. Both the surfaces of the platter are
+                covered with magnetic material.
+                There are headers on both sides of the platter, hence read and write operations can be performed on both
+                the sides.
+                The surface of the disc is divided into circular tracks. Tracks are further divided into sectors.
+                Seek Time: It is defined as the time required to move the read-write head on to the desired track.</p>
+        </div>
+        <div class="diskDiagram">
+            <img src="/images/diskScheduling.jpg" alt="disk Diagram">
+        </div>
+        <div class="require">
+            <h1>Why do we need Disk Scheduling Algorithms?</h1>
+            <p>Disk scheduling is done by operating systems to schedule I/O requests arriving for the disk. Disk
+                scheduling is also known as I/O scheduling.</p>
+        </div>      
+        <div class="content">
+            <div id="content1" class="requireContent">
+                <p class="para">Multiple I/O requests may arrive by different processes and only one I/O request can be served at a
+                    time by the disk controller. Thus other I/O requests need to wait in the waiting queue and need to
+                    be scheduled.</p>
+            </div>
+            <div id="content2" class="requireContent">
+                <p class="para">Two or more request may be far from each other so can result in greater disk arm movement.</p>
+            </div>
+            <div id="content3" class="requireContent">
+                <p class="para">Hard drives are one of the slowest parts of the computer system and thus need to be accessed in an
+                    efficient manner.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-heading">
+            <h1 id="footerHeading">Now let's look for various types of Disk Scheduling Algorithms...</h1>
+            <a href="/algo.html"><button id="btn" type="submit" >Let's Go..</button></a>
+        </div>
+    </footer>
+    <script src="/Js/script.js"></script>
+</body>
+
+</html>

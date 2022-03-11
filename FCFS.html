@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FCFS</title>
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+            background: linear-gradient(90deg, #607b9b, rgb(13, 2, 32));
+            color: white;
+        }
+
+        .topnav {
+            overflow: hidden;
+            width: 100%;
+            background: linear-gradient(90deg, rgb(21, 22, 44), rgb(48, 88, 116));
+        }
+
+        .topnav a {
+            float: left;
+            color: #85959e;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #6a53536e;
+            color: white;
+        }
+
+        canvas {
+            background-color: white;
+            box-shadow: 0px 6px 40px #7a7474;
+            top: 10;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            margin: auto;
+            position: relative;
+            display: block;
+            border-radius: 30px;
+        }
+
+        .heading {
+            background: rgb(0 0 0 / 40%);
+            color: white;
+            padding-top: 0.01%;
+            padding-bottom: 0.01%;
+            margin-block-start: 0%;
+            margin: 0%;
+            text-align: center;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border: 2px solid rgba(236, 238, 227, 0.425);
+        }
+
+        .takeinput {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .maincontainer {
+            grid-template-columns: auto auto;
+            width: 100%;
+        }
+
+        table {
+            /*border: 2px solid rgb(12, 11, 11);*/
+            position: relative;
+            width: 25%;
+        }
+
+        .inline {
+            display: inline-block;
+            margin-left: 25px;
+
+        }
+
+        td {
+            border: 2px solid rgb(12, 11, 11);
+            position: relative;
+            text-align: center;
+            width: 50%;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .buttonGrey {
+            background-color: white;
+            color: black;
+            border: 3px solid #85959e;
+            border-radius: 10px;
+        }
+
+        .buttonGrey:hover {
+            background-color: #0e1e33;
+            color: white;
+        }
+
+        .buttonRed {
+            background-color: white;
+            color: black;
+            border: 3px solid #af2b2b;
+            border-radius: 10px;
+        }
+
+        .buttonRed:hover {
+            background-color: #af2b2b;
+            color: white;
+        }
+
+        input[type=number] {
+            padding: 6px 12px;
+            box-sizing: border-box;
+            border: 2px solid #85959e;
+            border-radius: 4px;
+            width: 60%;
+            position: relative;
+        }
+    </style>
+    <script src="./js/main.js"></script>
+    <script src="./js/fcfs.js"></script>
+    <script>
+        var max_track_size;
+        var start_track;
+        var seek_queue = [];
+        var count = 0;
+        var canvas;
+        function initializeMax(l) {
+            if (l > 200) {
+                alert("Max track size should be less than or equal to 200 for best visualization.")
+                document.getElementById("maxTrack").value = "";
+            }
+            else
+                max_track_size = l;
+        }
+        function initializeStart(s) {
+            var trackPos = document.getElementById("maxTrack").value;
+            if (parseInt(s) > parseInt(trackPos)) {
+                console.log(1);
+                alert("Start track size should be less than max track size.")
+                document.getElementById("startTrack").value = "";
+            }
+            else
+                start_track = s;
+        }
+        function myFunction() {
+            count++;
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = count;
+            cell2.innerHTML = '<input type="number" placeholder="Enter the track number."value="" onchange="storeInput(this.value)">';
+        }
+        function storeInput(numb) {
+            var trackPos = document.getElementById("maxTrack").value;
+            if (parseInt(numb) > parseInt(trackPos)) {
+                alert("Track number should be less than max track size entered by you before.");
+                document.getElementById("myTable").deleteRow(-1);
+                count--;
+            }
+            else if (parseInt(numb) < 0) {
+                alert("Track number should be greater than 0");
+                document.getElementById("myTable").deleteRow(-1);
+                count--;
+            }
+            else
+                seek_queue.push(parseInt(numb));
+        }
+        /*Check Input is valid or not*/
+        function myFunction2() {
+            if (document.getElementById("maxTrack").value == "")
+                alert('Enter all the inputs first.');
+            else if (document.getElementById("startTrack").value == "")
+                alert('Enter all the inputs first.');
+            else
+                /*If all conditions met then, SEEK TIME is calculated*/
+                myfunction1();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+            <a class="active" href="./algo.html">Home</a>
+            <a href="./FCFS.html">FCFS</a>
+            <a href="./SSTF.html">SSTF</a>
+            <a href="./SCAN.html">SCAN</a>
+            <a href="./C-SCAN.html">C-SCAN</a>
+    </div>
+    <div class="heading">
+        <h1>FCFS Algorithm</h1>
+    </div>
+    <div class="maincontainer">
+        <div class="takeinput">
+            <h2
+                style="text-align: center; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                INPUT SECTION</h2>
+            <br>
+            <label style="color:#b8bfc3;font-size: 1.3rem; align-items: center;">Enter the maximum track size :&nbsp; <input id="maxTrack" type="number" value=""
+                    onchange="initializeMax(this.value)"></label>
+            <br>
+            <br>
+            <label style="color:#b8bfc3;font-size: 1.3rem; align-items: center;">Enter the starting track number: <input id="startTrack" type="number" value=""
+                    onchange="initializeStart(this.value)"></label>
+            <br>
+            <br>
+
+            <table id="myTable" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; width: 30%;">
+                <tr>
+                    <td>REQUEST NUMBER</td>
+                    <td>TRACK NUMBER</td>
+                </tr>
+            </table>
+            <br>
+            <div class="inline">
+                <button class="button buttonGrey" type="button" onClick="myFunction()">Enter Input</button>
+                <button class="button buttonGrey" type="button" onClick="myfunction1()">Show Output</button>
+                <button class="button buttonRed" type="button" onClick="window.location.reload();">Reset</button>
+            </div>
+            <br>
+            <br>
+            <h2 id="answer">
+
+            </h2>
+        </div>
+        <canvas>
+            <script>
+                canvas = document.querySelector("canvas");
+                console.log(canvas);
+                //set height and width of canvas
+                canvas.width = 1000;
+                canvas.height = 400;
+                var canvasContext = canvas.getContext("2d");
+                canvasContext.font = "20px Georgia";
+                canvasContext.textAlign = "center"
+                canvasContext.fillText("Please enter the input to view the visualization.", 500, 200, 10000);
+            </script>
+        </canvas>
+    </div>
+</body>
+
+</html>

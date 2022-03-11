@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100&display=swap');
+
+:root{
+    --heading-font: 'Spartan', sans-serif;
+    --p-font: 'Ubuntu', sans-serif;
+    --nav-font: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+    color: #f1f1e9;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+header{
+    /* border: 2px solid black; */
+    background: linear-gradient(45deg, #060d24, #143c69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    min-width: 950px;
+    text-align: center;
+    height: 100vh;
+}
+
+#header-heading{
+    font-size: 3.3em;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.navbar{
+    /* border: 2px solid red; */
+    background: linear-gradient(90deg, rgb(21, 22, 44), rgb(48, 88, 116));
+    min-width: 950px;
+    width: 100%;
+    position: fixed;
+}
+.navbar ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    list-style: none;
+    font-size: 1.5rem;
+}
+.navbar li{
+    font-family: var(--nav-font);
+    padding: 14px 10px;
+    color: #bec1c5;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Section Part */
+#home-sectoin-heading{
+    /* border: 2px solid black; */
+    text-align: center;
+    min-width: 650px;
+    font-size: 2.2em;
+    padding: 21px 0px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section{
+    /* border: 3px solid red; */
+    background: linear-gradient(90deg, rgb(96, 123, 155), rgb(13, 2, 32));
+    min-width: 650px;
+    color: white;
+    padding: 35px 150px;
+    font-size: 1.1em;
+}
+
+/* Media queries for making it responsive */
+@media (max-width: 830px) {
+    header{
+        background: linear-gradient(90deg, #060d24, #143c69);
+    }
+    .navbar{
+        background: linear-gradient(90deg, rgb(21, 22, 44), rgb(48, 88, 116));
+    }
+    section{
+        background: linear-gradient(90deg,rgb(96, 123, 155), rgb(13, 2, 32));
+        width: 100%;
+    }
+}
+
+.content{
+    font-family: var(--p-font);
+    padding: 0px 20px;
+}
+.content p{
+    padding: 8px;
+}
+
+code{
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background: rgb(0 0 0 / 40%);
+    box-shadow: 0px 6px 30px #7a7474;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.image{
+    margin-top: 40px;
+}
+#image{
+    /* border: 3px solid red; */
+    display: block;
+    margin: auto;
+    min-width: 650px;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+@media (max-width:1000px) {
+    #image{
+        display: block;
+        width: 450px;
+    }
+}
+
+#algo_content{
+    font-family: var(--p-font);
+    /* border: 3px solid black; */
+    background: #6a53536e;
+    margin: 10px;
+    padding: 35px;
+    box-shadow: 0 8px 22px black;
+}
+#algo_image{
+    /* border: 3px solid red; */
+    display: block;
+    margin: auto;
+    min-width: 650px;
+    margin-top: 20px;
+}
+@media (max-width:1000px) {
+    #algo_image{
+        display: block;
+        width: 450px;
+    }
+}
+#algo_p{
+    padding: 10px;
+    font-family: var(--nav-font);
+}
+#algo-heading{
+    /* border: 2px solid black; */
+    text-align: center;
+    min-width: 650px;
+    font-size: 2.2em;
+    padding: 21px 0px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#algo_content h2{
+    padding: 15px 0;
+}
+
+#example h1{
+    padding: 15px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn{
+    /* border: 3px solid; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    cursor: pointer;
+    font-size: 1.7em;
+    background: #85959e;
+    font-family: 'Ubuntu';
+    padding: 12px 30px;
+    box-shadow: 0 6px 10px #0a0a0a;
+    border-radius: 25px;
+}
+button:hover{
+    font-size: 1.8em;
+    background: #0e1e33;
+    font-family: 'Ubuntu';
+    padding: 12px 30px;
+    color: white;
+    box-shadow: 0 6px 10px #323033;
+    border-radius: 25px;
+    transition: 0.5s;
+}
