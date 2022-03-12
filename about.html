@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0%;
+            background: linear-gradient(90deg, #607b9b, rgb(13, 2, 32));
+            color: white;
+        }
+        .topnav {
+            overflow: hidden;
+            width: 100%;
+            background: linear-gradient(90deg, rgb(21, 22, 44), rgb(48, 88, 116));
+        }
+
+        .topnav a {
+            float: left;
+            color: #85959e;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #6a53536e;
+            color: white;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            border: 1px solid#eceee36c;
+            background: linear-gradient(90deg, rgb(21, 22, 44), rgb(48, 88, 116));
+            margin: 8px;
+        }
+
+        .about-section {
+            background: rgb(0 0 0 / 40%);
+            color: white;
+            padding: 50px;
+            margin-block-start: 0%;
+            margin: 0%;
+            height: 300px;
+            text-align: center;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: 3px solid #57646b;
+            border-radius: 10px;
+            outline: 0;
+            color: black;
+            font-size: medium;
+            font-weight: 100;
+            padding: 5px 10px;
+            display: inline-block;
+            padding: 8px;
+            margin: 4px 2px;
+            text-align: center;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            width: 30%;
+        }
+
+        .button:hover {
+            background-color: #0e1e33;
+            color: white;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="./algo.html">Home</a>
+        <a href="./FCFS.html">FCFS</a>
+        <a href="./SSTF.html">SSTF</a>
+        <a href="./SCAN.html">SCAN</a>
+        <a href="./C-SCAN.html">C-SCAN</a>
+        <a href="./about.html">About Us</a>
+    </div>
+
+    <div class="about-section">
+        <h1>About Us</h1>
+        <p>Some text about who we are and what we do.</p>
+        <p>Resize the browser window to see that this page is responsive by the way.</p>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Parth Vekaria</h2>
+                    <p class="title">Lead Developer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p><button class="button" onclick="location.href='mailto:xyz@abc.com';">Contact Me</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Lakshit</h2>
+                    <p class="title">Art Director</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p><button class="button" onclick="location.href='mailto:xyz@abc.com';">Contact Me</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Yash Prajapati</h2>
+                    <p class="title">Art Director</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p><button class="button" onclick="location.href='mailto:xyz@abc.com';">Contact Me</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Varun Patel</h2>
+                    <p class="title">Art Director</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p><button class="button" onclick="location.href='mailto:xyz@abc.com';">Contact Me</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Mihir Seth</h2>
+                    <p class="title">Designer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p><button class="button" onclick="location.href='mailto:xyz@abc.com';">Contact Me</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
